@@ -1,13 +1,14 @@
-/* globals __DEV__ */
 import Phaser from 'phaser'
-import Mushroom from '../sprites/Mushroom'
+import Reid from '../sprites/Reid'
+import Compy from '../sprites/Compy'
 
 export default class extends Phaser.State {
   init () {}
   preload () {}
 
   create () {
-    const bannerText = 'Phaser + ES6 + Webpack'
+    const bannerText = 'Adventure'
+    this.cursors = this.game.input.keyboard.createCursorKeys()
     let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText)
     banner.font = 'Bangers'
     banner.padding.set(10, 16)
@@ -15,20 +16,40 @@ export default class extends Phaser.State {
     banner.fill = '#77BFA3'
     banner.smoothed = false
     banner.anchor.setTo(0.5)
-
-    this.mushroom = new Mushroom({
+    new Reid({ // eslint-disable-line
       game: this.game,
-      x: this.world.centerX,
-      y: this.world.centerY,
-      asset: 'mushroom'
+      x: 100,
+      y: 100,
+      noVelocity: true,
+      asset: 'reid'
     })
-
-    this.game.add.existing(this.mushroom)
+    new Compy({ // eslint-disable-line
+      game: this.game,
+      x: 200,
+      y: 200,
+      noVelocity: true,
+      asset: 'reid'
+    })
   }
 
   render () {
-    if (__DEV__) {
-      this.game.debug.spriteInfo(this.mushroom, 32, 32)
+
+  }
+
+  update () {
+    if (this.cursors.down.isDown) {
+      new Reid({ // eslint-disable-line
+        game: this.game,
+        x: 0,
+        y: 0,
+        asset: 'reid'
+      })
+      new Compy({ // eslint-disable-line
+        game: this.game,
+        x: 0,
+        y: 0,
+        asset: 'reid'
+      })
     }
   }
 }
