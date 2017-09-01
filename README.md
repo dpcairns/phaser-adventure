@@ -1,11 +1,5 @@
-# Phaser + ES6 + Webpack.
-#### A bootstrap project to create games with Phaser + ES6 + Webpack.
-
-![Phaser+ES6+Webpack](https://raw.githubusercontent.com/lean/phaser-es6-webpack/master/assets/images/phaser-es6-webpack.jpg)
-
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-
-
+# Adventure
+## Based off of https://github.com/lean/phaser-es6-webpack
 ## Features
 - ESLINT with JavaScript Standard Style configuration
 - Next generation of Javascript
@@ -13,7 +7,7 @@
 - Webpack ready
 - WebFont Loader
 
-## Typescript 
+## Typescript
 If you need typescript support checkout the ```typescript``` branch. Thanks to @MatsMaker
 
 # Setup
@@ -38,7 +32,7 @@ Navigate to the cloned repo’s directory.
 
 Run:
 
-```npm install``` 
+```npm install```
 
 or if you choose yarn, just run ```yarn```
 
